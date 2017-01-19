@@ -45,6 +45,29 @@ public class ATMTest {
 
     @Test
     public void displayAccountNamesAndBalancesTest() {
+        String expected = "Name: John  Balance: 100.0\n"
+                + "Name: Alice  Balance: 50.0\n"
+                + "Name: Bob  Balance: 10000.0\n";
+        String actual = atm.displayAccountNamesAndBalances();
+        Assert.assertEquals(expected, actual);
+    }
 
+    @Test
+    public void addAccountToAccountsTest() {
+        Account expected = new SavingsAccount(BankAccountType.SAVINGS, 0.0, "John", 0.0,
+                BankAccountStatus.OPEN, OverdraftProtection.ENABLED);
+        atm.addAccountToAccounts(expected);
+        Account actual = atm.getAccounts().get(3);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void removeAccountWithNameAndBalanceTest() {
+        // need to implement .equals in Account I believe
+        ArrayList<Account> expected =  accounts;
+
+        atm.removeAccountWithNameAndBalance("John", 0.0);
+
+        ArrayList<Account> actual = atm.getAccounts();
     }
 }
