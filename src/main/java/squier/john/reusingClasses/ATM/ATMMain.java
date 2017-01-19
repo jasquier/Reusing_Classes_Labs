@@ -9,17 +9,17 @@ public class ATMMain {
     public static void main(String[] args) {
 
         // Create some accounts
-        ATM.Account savings = new SavingsAccount(BankAccountType.SAVINGS, 100.0, "Alice", 1.0,
+        Account savings = new SavingsAccount(BankAccountType.SAVINGS, 100.0, "Alice", 1.0,
                 BankAccountStatus.OPEN, OverdraftProtection.ENABLED);
 
-        ATM.Account checking = new CheckingAccount(BankAccountType.CHECKING, 50.0, "Bob", 0.0,
+        Account checking = new CheckingAccount(BankAccountType.CHECKING, 50.0, "Bob", 0.0,
                 BankAccountStatus.OPEN, OverdraftProtection.ENABLED);
 
-        ATM.Account investment = new InvestmentAccount(BankAccountType.INVESTMENT, 10000.0, "Eve", 10.0,
+        Account investment = new InvestmentAccount(BankAccountType.INVESTMENT, 10000.0, "Eve", 10.0,
                 BankAccountStatus.OPEN, OverdraftProtection.ENABLED);
 
         // Put em in an array list
-        ArrayList<ATM.Account> accounts = new ArrayList<>();
+        ArrayList<Account> accounts = new ArrayList<>();
         accounts.add(savings);
         accounts.add(checking);
         accounts.add(investment);
@@ -31,7 +31,7 @@ public class ATMMain {
         System.out.println(atm.displayAccountNamesAndBalances());
 
         // Add a new account to the atm
-        ATM.Account newAccount = new InvestmentAccount(BankAccountType.INVESTMENT, 0.0, "Steve", 10.0,
+        Account newAccount = new InvestmentAccount(BankAccountType.INVESTMENT, 0.0, "Steve", 10.0,
                 BankAccountStatus.OPEN, OverdraftProtection.ENABLED);
 
         atm.addAccountToAccounts(newAccount);

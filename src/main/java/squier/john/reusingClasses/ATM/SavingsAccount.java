@@ -8,7 +8,7 @@ import squier.john.reusingClasses.ATM.OverdraftProtection;
 /**
  * Created by johnsquier on 1/18/17.
  */
-public class SavingsAccount extends ATM.Account {
+public class SavingsAccount extends Account {
 
     public SavingsAccount(BankAccountType accountType, double balance, String accountHoldersName, double interestRate,
                           BankAccountStatus accountStatus, OverdraftProtection overdraftProtection) {

@@ -8,7 +8,7 @@ import squier.john.reusingClasses.ATM.*;
  * Created by johnsquier on 1/18/17.
  */
 public class InvestmentAccountTest {
-    ATM.Account bankAccount;
+    Account bankAccount;
     double delta = 0.00001;
 
     @Test
@@ -110,8 +110,8 @@ public class InvestmentAccountTest {
                 "John", 10.0, BankAccountStatus.OPEN,
                 OverdraftProtection.ENABLED);
 
-        ATM.ApprovalStatus expected = ATM.ApprovalStatus.ZERO_TRANSACTION;
-        ATM.ApprovalStatus actual = bankAccount.updateBalanceWithCreditOrDebit(0.0);
+        ApprovalStatus expected = ApprovalStatus.ZERO_TRANSACTION;
+        ApprovalStatus actual = bankAccount.updateBalanceWithCreditOrDebit(0.0);
         Assert.assertEquals(expected, actual);
     }
 

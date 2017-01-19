@@ -13,21 +13,21 @@ import java.util.ArrayList;
 public class ATMTest {
 
     ATM atm;
-    ArrayList<ATM.Account> accounts;
+    ArrayList<Account> accounts;
 
     @Before
     public void setup() {
-        accounts = new ArrayList<ATM.Account>();
+        accounts = new ArrayList<Account>();
 
-        ATM.Account account1 = new SavingsAccount(
+        Account account1 = new SavingsAccount(
                 BankAccountType.SAVINGS, 100.0, "John", 10.0,
                 BankAccountStatus.OPEN, OverdraftProtection.ENABLED);
 
-        ATM.Account account2 = new CheckingAccount(BankAccountType.CHECKING, 50.0, "Alice", 0.0,
+        Account account2 = new CheckingAccount(BankAccountType.CHECKING, 50.0, "Alice", 0.0,
                 BankAccountStatus.OPEN, OverdraftProtection.DISABLED);
 
 
-        ATM.Account account3 = new InvestmentAccount(BankAccountType.INVESTMENT, 10000.0, "Bob", 15.0,
+        Account account3 = new InvestmentAccount(BankAccountType.INVESTMENT, 10000.0, "Bob", 15.0,
                 BankAccountStatus.OPEN, OverdraftProtection.ENABLED);
 
         accounts.add(account1);
@@ -39,8 +39,8 @@ public class ATMTest {
 
     @Test
     public void getAccountsTest() {
-        ArrayList<ATM.Account> expected = accounts;
-        ArrayList<ATM.Account> actual = atm.getAccounts();
+        ArrayList<Account> expected = accounts;
+        ArrayList<Account> actual = atm.getAccounts();
         Assert.assertEquals(expected, actual);
     }
 
@@ -55,20 +55,20 @@ public class ATMTest {
 
     @Test
     public void addAccountToAccountsTest() {
-        ATM.Account expected = new SavingsAccount(BankAccountType.SAVINGS, 0.0, "John", 0.0,
+        Account expected = new SavingsAccount(BankAccountType.SAVINGS, 0.0, "John", 0.0,
                 BankAccountStatus.OPEN, OverdraftProtection.ENABLED);
         atm.addAccountToAccounts(expected);
-        ATM.Account actual = atm.getAccounts().get(3);
+        Account actual = atm.getAccounts().get(3);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void removeAccountWithNameAndBalanceTest() {
         // need to implement .equals in Account I believe
-        ArrayList<ATM.Account> expected =  accounts;
+        ArrayList<Account> expected =  accounts;
 
         atm.removeAccountWithNameAndBalance("John", 0.0);
 
-        ArrayList<ATM.Account> actual = atm.getAccounts();
+        ArrayList<Account> actual = atm.getAccounts();
     }
 }
