@@ -1,6 +1,11 @@
 package squier.john.reusingClasses;
 
-import sun.print.SunMinMaxPage;
+import squier.john.reusingClasses.humans.Genders;
+import squier.john.reusingClasses.humans.Human;
+import squier.john.reusingClasses.humans.SuperHuman;
+import squier.john.reusingClasses.inventory.Inventory;
+import squier.john.reusingClasses.inventory.Product;
+import squier.john.reusingClasses.rotatableList.RotatableList;
 
 /**
  * Created by johnsquier on 1/18/17.

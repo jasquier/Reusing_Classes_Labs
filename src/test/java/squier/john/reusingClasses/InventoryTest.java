@@ -3,8 +3,9 @@ package squier.john.reusingClasses;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import squier.john.reusingClasses.inventory.Inventory;
+import squier.john.reusingClasses.inventory.Product;
 
-import java.security.ProtectionDomain;
 import java.util.ArrayList;
 
 /**

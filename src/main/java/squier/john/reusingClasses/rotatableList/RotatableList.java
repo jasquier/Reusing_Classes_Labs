@@ -1,6 +1,5 @@
-package squier.john.reusingClasses;
+package squier.john.reusingClasses.rotatableList;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
