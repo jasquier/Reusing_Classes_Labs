@@ -31,4 +31,27 @@ public class ATM {
 
         return stringBuilder.toString();
     }
+
+    public void addAccountToAccounts(Account account) {
+        accounts.add(account);
+        return;
+    }
+
+    public void removeAccountWithNameAndBalance(String accountHoldersName, Double balance) {
+        Account toRemove = null;
+
+        for ( Account a : accounts ) {
+            if ( a.getAccountHoldersName().equalsIgnoreCase(accountHoldersName)
+                    && a.getBalance().equals(balance) ) {
+                toRemove = a;
+                break;
+                // can we have multiple accts with the same name and balance?
+                // probably...
+            }
+        }
+
+        if ( !toRemove.equals(null) ) {
+            accounts.remove(toRemove);
+        }
+    }
 }
