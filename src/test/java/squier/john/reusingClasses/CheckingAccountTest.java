@@ -2,12 +2,13 @@ package squier.john.reusingClasses;
 
 import org.junit.Assert;
 import org.junit.Test;
+import squier.john.reusingClasses.ATM.*;
 
 /**
  * Created by johnsquier on 1/18/17.
  */
 public class CheckingAccountTest {
-    Account bankAccount;
+    ATM.Account bankAccount;
     double delta = 0.00001;
 
     @Test
@@ -109,8 +110,8 @@ public class CheckingAccountTest {
                 "John", 10.0, BankAccountStatus.OPEN,
                 OverdraftProtection.ENABLED);
 
-        ApprovalStatus expected = ApprovalStatus.ZERO_TRANSACTION;
-        ApprovalStatus actual = bankAccount.updateBalanceWithCreditOrDebit(0.0);
+        ATM.ApprovalStatus expected = ATM.ApprovalStatus.ZERO_TRANSACTION;
+        ATM.ApprovalStatus actual = bankAccount.updateBalanceWithCreditOrDebit(0.0);
         Assert.assertEquals(expected, actual);
     }
 

@@ -3,6 +3,7 @@ package squier.john.reusingClasses;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import squier.john.reusingClasses.rotatableList.RotatableList;
 
 /**
  * Created by johnsquier on 1/18/17.

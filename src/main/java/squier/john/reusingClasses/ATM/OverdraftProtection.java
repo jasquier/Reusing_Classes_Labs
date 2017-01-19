@@ -1,4 +1,4 @@
-package squier.john.reusingClasses;
+package squier.john.reusingClasses.ATM;
 
 /**
  * Created by johnsquier on 1/18/17.

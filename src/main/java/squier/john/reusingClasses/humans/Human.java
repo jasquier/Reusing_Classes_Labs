@@ -1,4 +1,4 @@
-package squier.john.reusingClasses;
+package squier.john.reusingClasses.humans;
 
 import com.sun.tools.javac.jvm.Gen;
 

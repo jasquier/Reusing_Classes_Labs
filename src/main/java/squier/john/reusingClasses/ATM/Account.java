@@ -1,4 +1,4 @@
-package squier.john.reusingClasses;
+package squier.john.reusingClasses.ATM;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package squier.john.reusingClasses;
+package squier.john.reusingClasses.ATM;
 
 import java.util.ArrayList;
 
@@ -7,22 +7,22 @@ import java.util.ArrayList;
  */
 public class ATM {
 
-    private ArrayList<Account> accounts;
+    private ArrayList<ATM.Account> accounts;
 
     public ATM() {
-        accounts = new ArrayList<Account>();
+        accounts = new ArrayList<ATM.Account>();
     }
 
-    public ATM(ArrayList<Account> accounts) {
+    public ATM(ArrayList<ATM.Account> accounts) {
         this.accounts = accounts;
     }
 
-    public ArrayList<Account> getAccounts() { return accounts; }
+    public ArrayList<ATM.Account> getAccounts() { return accounts; }
 
     public String displayAccountNamesAndBalances() {
         StringBuilder stringBuilder = new StringBuilder(500);
 
-        for ( Account a : accounts ) {
+        for ( ATM.Account a : accounts ) {
             stringBuilder.append("Name: ");
             stringBuilder.append(a.getAccountHoldersName());
             stringBuilder.append("  Balance: ");
@@ -32,15 +32,15 @@ public class ATM {
         return stringBuilder.toString();
     }
 
-    public void addAccountToAccounts(Account account) {
+    public void addAccountToAccounts(ATM.Account account) {
         accounts.add(account);
         return;
     }
 
     public void removeAccountWithNameAndBalance(String accountHoldersName, Double balance) {
-        Account toRemove = null;
+        ATM.Account toRemove = null;
 
-        for ( Account a : accounts ) {
+        for ( ATM.Account a : accounts ) {
             if ( a.getAccountHoldersName().equalsIgnoreCase(accountHoldersName)
                     && a.getBalance().equals(balance) ) {
                 toRemove = a;
