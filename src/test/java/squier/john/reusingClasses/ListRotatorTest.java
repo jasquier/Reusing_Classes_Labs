@@ -14,8 +14,13 @@ public class ListRotatorTest {
 
     @Before
     public void setup() {
-        expectedList = new RotatableList();
-        expectedList.createAndInitializeList();
+        expectedList = new RotatableList<Integer>();
+        expectedList.add(1);
+        expectedList.add(2);
+        expectedList.add(3);
+        expectedList.add(4);
+        expectedList.add(5);
+        expectedList.add(6);
     }
 
     @Test
@@ -71,18 +76,6 @@ public class ListRotatorTest {
     public void rotateListBySevenTest() {
         Object[] expected = {2, 3, 4, 5, 6, 1};
         Object[] actual = expectedList.rotateList(7).toArray();
-        Assert.assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void createAndInitializeListTest() {
-        Object[] expected = {1, 2, 3, 4, 5, 6};
-
-        RotatableList temp = new RotatableList();
-        temp.createAndInitializeList();
-
-        Object[] actual = temp.toArray();
-
         Assert.assertArrayEquals(expected, actual);
     }
 }

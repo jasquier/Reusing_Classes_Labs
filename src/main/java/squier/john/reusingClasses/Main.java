@@ -7,6 +7,8 @@ import squier.john.reusingClasses.inventory.Inventory;
 import squier.john.reusingClasses.inventory.Product;
 import squier.john.reusingClasses.rotatableList.RotatableList;
 
+import java.util.ArrayList;
+
 /**
  * Created by johnsquier on 1/18/17.
  */
@@ -14,8 +16,27 @@ public class Main {
     public static void main(String[] args) {
 
         // Demonstrate RotatableList
-        RotatableList rotatableList = new RotatableList();
-        rotatableList.runRotateDemo();
+        RotatableList<Double> rotatableList = new RotatableList<>();
+
+        // if you uncomment the subsequent line you will get a compilation error bc my
+        //  RotatableList rotatableList is expecting Doubles
+        //rotatableList.add("String");
+
+        rotatableList.add(1.0);
+        rotatableList.add(2.0);
+        rotatableList.add(3.0);
+        rotatableList.add(4.0);
+        rotatableList.add(5.0);
+        rotatableList.add(6.0);
+
+        System.out.printf("Original List: ");
+        rotatableList.printOutList();
+        System.out.printf("Shift = %d\n", 2);
+
+        rotatableList = rotatableList.rotateList(2);
+
+        System.out.printf("Rotated List:  ");
+        rotatableList.printOutList();
 
         // Print newline
         System.out.println();
